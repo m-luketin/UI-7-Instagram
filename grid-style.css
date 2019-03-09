@@ -7,12 +7,11 @@ body {
 }
 
 nav {
+    display: grid;
+    grid-template-columns: 500px 500px 200px;
     width: 78%;
-    padding: 0 11%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 80px;
+    padding: 30px 11%;
+    height: 30px;
     background-color: white;
     border-bottom: 1px solid #efefef;
 }
@@ -24,14 +23,14 @@ a {
 }
 
 .nav__flexcontainer {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 20px 20px 50px;
 }
 
 .nav__icon {
     height: 23px;
     width: 23px;
-    background-image: url(./images/icons-sprite_small.png);
+    background-image: url(./assets/images/icons-sprite_small.png);
     background-repeat: no-repeat;
     background-position: -85px -100px;
 }
@@ -46,7 +45,7 @@ a {
 .nav__logo {
     height: 35px;
     width: 105px;
-    background-image: url(./images/icons-sprite_small.png);
+    background-image: url(./assets/images/icons-sprite_small.png);
     background-repeat: no-repeat;
     background-position: -135px 5px;
 }
@@ -56,18 +55,18 @@ a {
     height: 15px;
     margin-left: 70px;
     margin-top: 5px;
-    background-image: url(./images/icons-sprite.png);
+    background-image: url(./assets/images/icons-sprite.png);
     background-repeat: no-repeat;
     background-position: -435px -342px;
     position: absolute;
 }
 
-.nav__searchwrapper:active .nav__searchicon{
+.nav__searchwrapper:focus-within .nav__searchicon{
     display: none;
 }
 
 .nav__search {
-    color: #eee;
+    color: #999;
     border-radius: 3px;
     background-color: rgb(250, 250, 250);
     border: 1px solid #efefef;
@@ -93,13 +92,11 @@ a {
 }
 
 .profile {
+    display: grid;
+    grid-template-columns: 200px auto;
     width: 70%;
-    display: flex;
-    flex-direction: column;
     margin: 3.5% 0 0 24%;
-    flex-wrap: wrap;
     height: 250px;
-    align-items: space-between;
 }
 
 .profile__picture {
@@ -110,7 +107,6 @@ a {
 }
 
 .profile__main {
-    display: flex;
 }
 
 .profile__name {
@@ -126,8 +122,6 @@ a {
 }
 
 .profile__numbers {
-    display: flex;
-    justify-content: space-between;
     width: 35%;
     margin-top: 1.5%;
     color: #333;
@@ -135,8 +129,6 @@ a {
 }
 
 .profile__description {
-    display: flex;
-    flex-direction: column;
     width: 55%;
     margin-top: 2%;
     margin-bottom: 0px;
@@ -148,7 +140,6 @@ a {
 .description__title {
     font-weight: 500;
     color: #000;
-    
 }
 
 .description__text {
@@ -157,45 +148,42 @@ a {
 
 main {
     width: 60%;
-    display: flex;
-    flex-direction: column;
     margin: auto;
 }
 
 .icons {
+    display: grid;
+    grid-template-columns: 75px 75px;
     width: 105%;
     height: 50px;
-    display: flex;
     border-top: 1px solid #efefef;
-    align-items: center;
-    justify-content: center;
-    margin-top: -2%;
+    margin-top: 20px;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 1px;
-    margin-left: -2.5%;
+    padding-top: 10px;
 }
 
 .icons__posts {
+    display: grid;
+    grid-template-columns: 20px 50px;
     width: 9%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
     margin-right: 1%;
+    margin-left: 500%;
 }
 
 .icons__tagged {
+    display: grid;
+    grid-template-columns: 20px 50px;
     width: 11%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
     margin-left: 1%;
+    margin-left: 500%;
 }
 
 .posts {
     height: 18px;
     width: 18px;
-    background-image: url(./images/icons-sprite_small.png);
+    background-image: url(./assets/images/icons-sprite_small.png);
     background-repeat: no-repeat;
     background-position: -58px -158px;
     background-size: 200px;
@@ -204,7 +192,7 @@ main {
 .tagged {
     height: 18px;
     width: 18px;
-    background-image: url(./images/icons-sprite.png);
+    background-image: url(./assets/images/icons-sprite.png);
     background-repeat: no-repeat;
     background-position: -205px -5px;
     background-size: 230px;
@@ -212,16 +200,15 @@ main {
 
 .images {
     width: 105%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: -20px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
 }
 
 .images__post {
-    width: 31%;
+    width: 95%;
     height: 300px;
-    margin-bottom: 3%;
+    margin: 3%;
 }
 
 .images__post img{
@@ -231,21 +218,147 @@ main {
 }
 
 footer {
+    display: grid;
+    grid-template-columns: 925px 200px;
     width: 72%;
-    display: flex;
-    justify-content: space-around;
     margin: 50px 128px;
     font-size: 12px;
 }
 
 .links {
     width: 60%;
-    display: flex;
-    justify-content: space-between;
     margin: auto;
 }
 
 .copyright {
     font-weight: 500;
     color: #999;
+}
+
+@media screen and (max-width: 1440px){
+    main { 
+        height: 1300px;
+    }
+
+    footer {
+        margin-top: -275px;
+    }
+}
+
+@media screen and (max-width: 1025px){
+    main {
+        width: 120%;
+        height: 800px;
+    }
+
+    .profile {
+        grid-template-columns: 300px 500px;
+    }
+
+    .profile__picture {
+        width: 200px;
+    }
+    
+    .profile__numbers {
+        width: 300px;
+    }
+
+    .profile__description {
+        width: 500px;
+    }
+
+    .icons {
+        margin-left: 15%;
+    }
+
+    .images__post {
+        height: 400px;
+        width: 95%;
+    }
+
+    footer {
+        margin-top: 250px;
+        margin-left: -25px;
+        font-size: 10px;
+        width: 100%;
+    }
+
+    .links {
+        width: 80%;
+    }
+
+    footer {
+        margin-top: 550px;
+        grid-template-columns: 1100px 500px;
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: 80px 80px 60px 50px 70px 80px 60px 80px 80px 80px 80px ;
+
+    }
+}
+
+@media screen and (max-width: 769px){
+    nav {
+        width: 175%;
+        padding: 20px 10%;
+        grid-template-columns: 500px 500px 200px;
+        height: 30px;
+    }
+
+    .profile {
+        margin-left: 300px;
+        height: 250px;
+        width: 700px
+    }
+
+    .icons {
+        margin-left: 10px;
+        padding-left: 10%;
+    }
+    main {
+        margin: 0px 50px;
+        width: 150%;
+        height: 2000px;
+    }
+
+    .images__post {
+        width: 95%;
+        height: 400px;
+        margin: 10px;
+    }
+
+    footer {
+        width: 100%;
+        margin-top: -670px;
+    }
+}
+
+@media screen and (max-width: 376px){
+    nav {
+        width: 320%;
+    }
+
+    main {
+        width: 120%;
+        margin-left: 25px;
+    }
+
+    .images {
+        width: 300%;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+    }
+
+    .images__post {
+        width: 95%;
+        height: 350px;
+        margin: 10px;
+    }
+
+    footer {
+        width: 200%;
+        margin-top: -800px;
+    }
 }
